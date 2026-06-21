@@ -19,7 +19,7 @@ This is a modern, zero-dependency personal portfolio site built with pure HTML, 
 | Hero | Name, current role at HPE, and call-to-action |
 | About | Professional summary with contact details |
 | Experience | Full timeline from 2019–present (HPE TAM, Aruba Networking, 3S Standard Sharing Software, OXAHOST, BIAT) |
-| Projects | Network Management Platform (Flask), Cisco Configuration Automation, Tunisia CentOS Mirror — with technology logos |
+| Projects | Centralized Network Management System (Flask + Cisco API), Tunisia CentOS Mirror, Web Application Security Audit — with technology logos |
 | Skills & Expertise | Account Management, Wireless Network Design, Wireless Mobility, Cybersecurity, System Administration, Software Development |
 | Certifications | TryHackMe, CompTIA Network+, Palo Alto Networks, Google, and university cybersecurity certifications |
 | Education | ESPRIT — Engineer's Degree in Network Infrastructure and Data Security (2017–2022) |
