@@ -199,12 +199,16 @@
       "fluency": "Native"
     },
     {
-      "language": "French",
-      "fluency": "Fluent (C1–C2)"
+      "language": "English",
+      "fluency": "Bilingual proficiency"
     },
     {
-      "language": "English",
+      "language": "French",
       "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Japanese",
+      "fluency": "Beginner (conversational; limited reading)"
     }
   ],
   "interests": [

@@ -139,11 +139,12 @@ SKILLS = {
     ],
 }
 
-# NOTE: languages are an assumed default for a Tunisian engineer (flagged to user).
+# Languages (confirmed by the candidate).
 LANGUAGES = [
     {"language": "Arabic", "level": "Native"},
-    {"language": "French", "level": "Fluent (C1\u2013C2)"},
-    {"language": "English", "level": "Professional working proficiency"},
+    {"language": "English", "level": "Bilingual proficiency"},
+    {"language": "French", "level": "Professional working proficiency"},
+    {"language": "Japanese", "level": "Beginner (conversational; limited reading)"},
 ]
 
 INTERESTS = ["Cooking", "Gaming", "Gardening", "Plastic models", "Travelling", "Collecting", "3D modelling"]
