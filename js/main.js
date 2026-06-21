@@ -5,6 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Internationalization (i18n) ---
+  initI18n();
+
   // --- Custom Cursor ---
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
@@ -236,3 +239,85 @@ function initConstellation() {
     resize();
   });
 }
+
+// ============================================
+// Internationalization — auto-detect + manual switch
+// English is the default (text lives in the HTML).
+// ============================================
+function initI18n() {
+  var SUPPORTED = ['en', 'fr', 'ar', 'ja'];
+  var RTL = ['ar'];
+  var STORAGE_KEY = 'preferred-lang';
+  var dict = window.I18N || {};
+
+  // Cache the original English text/HTML so we can restore it without a reload.
+  var nodes = document.querySelectorAll('[data-i18n]');
+  nodes.forEach(function (el) {
+    el.setAttribute('data-i18n-en', el.innerHTML);
+  });
+
+  function pickLanguage() {
+    // 1) explicit ?lang= override  2) saved choice  3) browser preference  4) English
+    var params = new URLSearchParams(window.location.search);
+    var q = (params.get('lang') || '').toLowerCase();
+    if (SUPPORTED.indexOf(q) !== -1) return q;
+
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+
+    var prefs = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < prefs.length; i++) {
+      var base = prefs[i].toLowerCase().split('-')[0];
+      if (SUPPORTED.indexOf(base) !== -1) return base;
+    }
+    return 'en';
+  }
+
+  function apply(lang, persist) {
+    var table = lang === 'en' ? null : dict[lang];
+
+    nodes.forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (lang === 'en') {
+        el.innerHTML = el.getAttribute('data-i18n-en');
+      } else if (table && table[key] != null) {
+        el.innerHTML = table[key];
+      } else {
+        el.innerHTML = el.getAttribute('data-i18n-en'); // fallback to English
+      }
+    });
+
+    // Expired-cert badge (CSS ::after reads this attribute via content)
+    var badge = (table && table['certs.expiredBadge']) || 'EXPIRED';
+    document.querySelectorAll('.cert-expired').forEach(function (el) {
+      el.setAttribute('data-badge', badge);
+    });
+
+    // Document direction + lang
+    var isRtl = RTL.indexOf(lang) !== -1;
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    document.body.classList.toggle('rtl', isRtl);
+    document.body.classList.toggle('lang-ar', lang === 'ar');
+    document.body.classList.toggle('lang-ja', lang === 'ja');
+
+    // Reflect active state on the switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      var active = b.getAttribute('data-lang') === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
+
+    if (persist) localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  // Wire up the switcher
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      apply(btn.getAttribute('data-lang'), true);
+    });
+  });
+
+  apply(pickLanguage(), false);
+}
+

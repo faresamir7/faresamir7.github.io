@@ -6,11 +6,16 @@
   <title>Fares Amir Hassen — Technical Account Manager</title>
   <meta name="description" content="Technical Account Manager at HPE | Wireless Network Engineer | Cybersecurity & Infrastructure Specialist based in Ariana, Tunisia.">
   <link rel="canonical" href="https://faresamir7.github.io/">
+  <link rel="alternate" hreflang="en" href="https://faresamir7.github.io/?lang=en">
+  <link rel="alternate" hreflang="fr" href="https://faresamir7.github.io/?lang=fr">
+  <link rel="alternate" hreflang="ar" href="https://faresamir7.github.io/?lang=ar">
+  <link rel="alternate" hreflang="ja" href="https://faresamir7.github.io/?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://faresamir7.github.io/">
   <link rel="alternate" type="application/json" href="assets/resume.json" title="Résumé (JSON Resume schema)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='14' font-weight='700' fill='%23ff2d2d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
@@ -42,6 +47,7 @@
       "Network Infrastructure",
       "System Administration"
     ],
+    "knowsLanguage": ["ar", "en", "fr", "ja"],
     "sameAs": [
       "https://www.linkedin.com/in/fares-amir-hassen-4913951b7",
       "https://github.com/faresamir7"
@@ -68,26 +74,32 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+    <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    <li class="lang-switcher" role="group" aria-label="Language selector">
+      <button type="button" class="lang-btn" data-lang="en" lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="fr" lang="fr">FR</button>
+      <button type="button" class="lang-btn" data-lang="ar" lang="ar">عربي</button>
+      <button type="button" class="lang-btn" data-lang="ja" lang="ja">日本語</button>
+    </li>
   </ul>
 </nav>
 
 <!-- Hero -->
 <section id="home" class="hero">
   <div class="hero-content">
-    <p class="hero-greeting reveal">Hello, I'm</p>
-    <h1 class="hero-name reveal">Fares Amir<br>Hassen</h1>
+    <p class="hero-greeting reveal" data-i18n="hero.greeting">Hello, I'm</p>
+    <h1 class="hero-name reveal" data-i18n="hero.name">Fares Amir<br>Hassen</h1>
     <div class="hero-line reveal"></div>
-    <p class="hero-title reveal">Technical Account Manager at HPE</p>
-    <p class="hero-subtitle reveal">Wireless Network Engineer · Cybersecurity Specialist</p>
+    <p class="hero-title reveal" data-i18n="hero.title">Technical Account Manager at HPE</p>
+    <p class="hero-subtitle reveal" data-i18n="hero.subtitle">Wireless Network Engineer · Cybersecurity Specialist</p>
     <div class="hero-actions reveal">
-      <a href="#contact" class="hero-cta">Get in Touch</a>
-      <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="hero-cta hero-cta-alt" download>Download Resume</a>
+      <a href="#contact" class="hero-cta" data-i18n="hero.ctaContact">Get in Touch</a>
+      <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="hero-cta hero-cta-alt" download data-i18n="hero.ctaResume">Download Resume</a>
     </div>
   </div>
   <div class="hero-scroll-indicator">
@@ -98,23 +110,23 @@
 <!-- About -->
 <section id="about" class="section about">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>About Me</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="about.title">About Me</span></h2>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm a highly motivated and proactive professional with a strong background in computer science and a passion for solving complex technical problems. Currently serving as a Technical Account Manager at Hewlett Packard Enterprise, I bring years of experience in wireless network engineering, cybersecurity, and infrastructure management.</p>
-        <p>My journey spans from hands-on pentesting and network security to enterprise-level wireless solutions with Aruba Networking. I thrive at the intersection of technical depth and client-facing problem solving — turning complex issues into clear resolutions.</p>
+        <p data-i18n="about.p1">I'm a highly motivated and proactive professional with a strong background in computer science and a passion for solving complex technical problems. Currently serving as a Technical Account Manager at Hewlett Packard Enterprise, I bring years of experience in wireless network engineering, cybersecurity, and infrastructure management.</p>
+        <p data-i18n="about.p2">My journey spans from hands-on pentesting and network security to enterprise-level wireless solutions with Aruba Networking. I thrive at the intersection of technical depth and client-facing problem solving — turning complex issues into clear resolutions.</p>
       </div>
       <div class="about-details reveal">
         <div class="detail-item">
-          <span class="detail-label">Location</span>
-          <span class="detail-value">Ariana, Tunisia</span>
+          <span class="detail-label" data-i18n="about.labelLocation">Location</span>
+          <span class="detail-value" data-i18n="about.valueLocation">Ariana, Tunisia</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">Current Role</span>
-          <span class="detail-value">Technical Account Manager @ HPE</span>
+          <span class="detail-label" data-i18n="about.labelRole">Current Role</span>
+          <span class="detail-value" data-i18n="about.valueRole">Technical Account Manager @ HPE</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">Email</span>
+          <span class="detail-label" data-i18n="about.labelEmail">Email</span>
           <a href="mailto:faresamir7@gmail.com" class="detail-value detail-link">faresamir7@gmail.com</a>
         </div>
         <div class="detail-item">
@@ -129,24 +141,24 @@
 <!-- Experience -->
 <section id="experience" class="section experience">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Experience</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="exp.title">Experience</span></h2>
     <div class="timeline">
       <!-- HPE TAM -->
       <div class="timeline-item reveal">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Technical Account Manager</h3>
+            <h3 data-i18n="exp.tam.role">Technical Account Manager</h3>
             <span class="timeline-company">Hewlett Packard Enterprise</span>
           </div>
-          <span class="timeline-date">Jan 2026 — Present · Ariana, Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.tam.date">Jan 2026 — Present · Ariana, Tunisia</span>
           <ul class="timeline-details">
-            <li>Serve as the trusted technical advisor and primary HPE interface across the account, owning the technical relationship from escalation to resolution</li>
-            <li>Manage the delivery of contracted proactive support services, planning service improvements and staying accountable for defined service deliverables</li>
-            <li>Provide multi-technology support across HPE ProLiant servers, Synergy composable infrastructure, and 3PAR storage platforms</li>
-            <li>Troubleshoot and maintain SAN fabrics built on HPE/Brocade SAN switches, ensuring resilient storage connectivity</li>
-            <li>Support enterprise campus networking on HPE and Aruba switches, applying deep wireless and infrastructure expertise</li>
-            <li>Act as the bridge between customer teams and HPE engineering — translating complex technical issues into clear, proactive outcomes</li>
+            <li data-i18n="exp.tam.b1">Serve as the trusted technical advisor and primary HPE interface across the account, owning the technical relationship from escalation to resolution</li>
+            <li data-i18n="exp.tam.b2">Manage the delivery of contracted proactive support services, planning service improvements and staying accountable for defined service deliverables</li>
+            <li data-i18n="exp.tam.b3">Provide multi-technology support across HPE ProLiant servers, Synergy composable infrastructure, and 3PAR storage platforms</li>
+            <li data-i18n="exp.tam.b4">Troubleshoot and maintain SAN fabrics built on HPE/Brocade SAN switches, ensuring resilient storage connectivity</li>
+            <li data-i18n="exp.tam.b5">Support enterprise campus networking on HPE and Aruba switches, applying deep wireless and infrastructure expertise</li>
+            <li data-i18n="exp.tam.b6">Act as the bridge between customer teams and HPE engineering — translating complex technical issues into clear, proactive outcomes</li>
           </ul>
         </div>
       </div>
@@ -156,17 +168,17 @@
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Wireless Network Engineer</h3>
+            <h3 data-i18n="exp.wne.role">Wireless Network Engineer</h3>
             <span class="timeline-company">HPE Aruba Networking</span>
           </div>
-          <span class="timeline-date">Mar 2023 — Dec 2025 · Ariana, Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.wne.date">Mar 2023 — Dec 2025 · Ariana, Tunisia</span>
           <ul class="timeline-details">
-            <li>Diagnosed wireless network issues involving Aruba Mobility Controllers, Masters, and Access Points across all OSI layers</li>
-            <li>Implemented and configured modern RADIUS authentication protocols for secure wireless access</li>
-            <li>Performed firmware upgrades on Aruba devices to ensure optimal performance and security</li>
-            <li>Provided remote technical support for Aruba AOS products, resolving connectivity issues through log analysis</li>
-            <li>Assisted with AirWave and Central troubleshooting tools; configured Aruba Instant APs in enterprise environments</li>
-            <li>Collaborated with cross-functional teams to resolve complex wireless network problems</li>
+            <li data-i18n="exp.wne.b1">Diagnosed wireless network issues involving Aruba Mobility Controllers, Masters, and Access Points across all OSI layers</li>
+            <li data-i18n="exp.wne.b2">Implemented and configured modern RADIUS authentication protocols for secure wireless access</li>
+            <li data-i18n="exp.wne.b3">Performed firmware upgrades on Aruba devices to ensure optimal performance and security</li>
+            <li data-i18n="exp.wne.b4">Provided remote technical support for Aruba AOS products, resolving connectivity issues through log analysis</li>
+            <li data-i18n="exp.wne.b5">Assisted with AirWave and Central troubleshooting tools; configured Aruba Instant APs in enterprise environments</li>
+            <li data-i18n="exp.wne.b6">Collaborated with cross-functional teams to resolve complex wireless network problems</li>
           </ul>
         </div>
       </div>
@@ -176,15 +188,15 @@
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Network Security Intern</h3>
+            <h3 data-i18n="exp.nsi.role">Network Security Intern</h3>
             <span class="timeline-company">3S Standard Sharing Software</span>
           </div>
-          <span class="timeline-date">Mar 2022 — Sep 2022 · Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.nsi.date">Mar 2022 — Sep 2022 · Tunisia</span>
           <ul class="timeline-details">
-            <li>Developed a modular Python Flask web interface for project management and user interaction</li>
-            <li>Designed centralized management system for overseeing and controlling network nodes</li>
-            <li>Automated Cisco API integration for mass configuration of enterprise network infrastructure</li>
-            <li>Developed secure authentication and user role management features with integrated database</li>
+            <li data-i18n="exp.nsi.b1">Developed a modular Python Flask web interface for project management and user interaction</li>
+            <li data-i18n="exp.nsi.b2">Designed centralized management system for overseeing and controlling network nodes</li>
+            <li data-i18n="exp.nsi.b3">Automated Cisco API integration for mass configuration of enterprise network infrastructure</li>
+            <li data-i18n="exp.nsi.b4">Developed secure authentication and user role management features with integrated database</li>
           </ul>
         </div>
       </div>
@@ -194,31 +206,31 @@
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Intern</h3>
+            <h3 data-i18n="exp.oxa.role">Intern</h3>
             <span class="timeline-company">OXAHOST</span>
           </div>
-          <span class="timeline-date">Jun 2021 — Jul 2021 · Tunis, Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.oxa.date">Jun 2021 — Jul 2021 · Tunis, Tunisia</span>
           <ul class="timeline-details">
-            <li>Created the only CentOS mirror available in Tunisia</li>
-            <li>Pentested the new website interface and various services including Zimbra and cPanel</li>
-            <li>Assisted webdev team in securing the company's new website; audited security concerns</li>
+            <li data-i18n="exp.oxa.b1">Created the only CentOS mirror available in Tunisia</li>
+            <li data-i18n="exp.oxa.b2">Pentested the new website interface and various services including Zimbra and cPanel</li>
+            <li data-i18n="exp.oxa.b3">Assisted webdev team in securing the company's new website; audited security concerns</li>
           </ul>
         </div>
       </div>
 
-      <!-- BIAT -->
+      <!-- BIAT 2020 -->
       <div class="timeline-item reveal">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Summer Intern</h3>
+            <h3 data-i18n="exp.biat20.role">Summer Intern</h3>
             <span class="timeline-company">BIAT</span>
           </div>
-          <span class="timeline-date">Aug 2020 — Sep 2020 · Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.biat20.date">Aug 2020 — Sep 2020 · Tunisia</span>
           <ul class="timeline-details">
-            <li>Assisted in designing and maintaining network infrastructure; monitored and troubleshot routers, switches, firewalls</li>
-            <li>Supported vulnerability assessments and penetration testing activities</li>
-            <li>Configured and managed network security tools (IDS/IPS, firewalls); analyzed security logs for incident response</li>
+            <li data-i18n="exp.biat20.b1">Assisted in designing and maintaining network infrastructure; monitored and troubleshot routers, switches, firewalls</li>
+            <li data-i18n="exp.biat20.b2">Supported vulnerability assessments and penetration testing activities</li>
+            <li data-i18n="exp.biat20.b3">Configured and managed network security tools (IDS/IPS, firewalls); analyzed security logs for incident response</li>
           </ul>
         </div>
       </div>
@@ -228,13 +240,13 @@
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <h3>Summer Intern</h3>
+            <h3 data-i18n="exp.biat19.role">Summer Intern</h3>
             <span class="timeline-company">BIAT</span>
           </div>
-          <span class="timeline-date">Aug 2019 — Sep 2019 · Tunisia</span>
+          <span class="timeline-date" data-i18n="exp.biat19.date">Aug 2019 — Sep 2019 · Tunisia</span>
           <ul class="timeline-details">
-            <li>Served as liaison between Backoffice and Frontoffice teams; facilitated smooth communication across departments</li>
-            <li>Coordinated tasks, managed client requests, and enhanced workflow collaboration</li>
+            <li data-i18n="exp.biat19.b1">Served as liaison between Backoffice and Frontoffice teams; facilitated smooth communication across departments</li>
+            <li data-i18n="exp.biat19.b2">Coordinated tasks, managed client requests, and enhanced workflow collaboration</li>
           </ul>
         </div>
       </div>
@@ -245,12 +257,12 @@
 <!-- Projects -->
 <section id="projects" class="section projects">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Projects</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="projects.title">Projects</span></h2>
     <div class="projects-grid">
 
       <div class="project-card reveal">
-        <h3>Centralized Network Management System</h3>
-        <p>A modular Flask web platform for centralized management and control of enterprise network nodes — featuring secure authentication, role-based access, an integrated configuration database, and automated Cisco API integration for scalable mass configuration of network infrastructure.</p>
+        <h3 data-i18n="projects.p1.title">Centralized Network Management System</h3>
+        <p data-i18n="projects.p1.desc">A modular Flask web platform for centralized management and control of enterprise network nodes — featuring secure authentication, role-based access, an integrated configuration database, and automated Cisco API integration for scalable mass configuration of network infrastructure.</p>
         <div class="project-tech">
           <img src="https://cdn.simpleicons.org/python" alt="Python" title="Python" class="tech-logo">
           <img src="https://cdn.simpleicons.org/flask" alt="Flask" title="Flask" class="tech-logo">
@@ -260,8 +272,8 @@
       </div>
 
       <div class="project-card reveal">
-        <h3>Tunisia CentOS Mirror</h3>
-        <p>Built and maintained the only CentOS package mirror available in Tunisia — providing fast, local repository access for the country's Linux users and reducing reliance on overseas mirrors.</p>
+        <h3 data-i18n="projects.p2.title">Tunisia CentOS Mirror</h3>
+        <p data-i18n="projects.p2.desc">Built and maintained the only CentOS package mirror available in Tunisia — providing fast, local repository access for the country's Linux users and reducing reliance on overseas mirrors.</p>
         <div class="project-tech">
           <img src="https://cdn.simpleicons.org/centos" alt="CentOS" title="CentOS" class="tech-logo">
           <img src="https://cdn.simpleicons.org/linux" alt="Linux" title="Linux" class="tech-logo">
@@ -270,8 +282,8 @@
       </div>
 
       <div class="project-card reveal">
-        <h3>Web Application Security Audit</h3>
-        <p>Penetration-tested a company's new website interface and hosted services including Zimbra and cPanel — identifying and auditing security concerns, then assisting the web team in hardening the platform ahead of launch.</p>
+        <h3 data-i18n="projects.p3.title">Web Application Security Audit</h3>
+        <p data-i18n="projects.p3.desc">Penetration-tested a company's new website interface and hosted services including Zimbra and cPanel — identifying and auditing security concerns, then assisting the web team in hardening the platform ahead of launch.</p>
         <div class="project-tech">
           <img src="https://cdn.simpleicons.org/owasp" alt="OWASP" title="OWASP" class="tech-logo">
           <img src="https://cdn.simpleicons.org/cpanel" alt="cPanel" title="cPanel" class="tech-logo">
@@ -286,37 +298,37 @@
 <!-- Skills -->
 <section id="skills" class="section skills">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Skills & Expertise</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="skills.title">Skills &amp; Expertise</span></h2>
     <div class="skills-grid">
       <div class="skill-card reveal">
         <div class="skill-icon">&#9635;</div>
-        <h3>Account Management</h3>
-        <p>Client relationship management, technical account ownership, and cross-functional coordination at enterprise scale.</p>
+        <h3 data-i18n="skills.s1.title">Account Management</h3>
+        <p data-i18n="skills.s1.desc">Client relationship management, technical account ownership, and cross-functional coordination at enterprise scale.</p>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">&#9675;</div>
-        <h3>Wireless Network Design</h3>
-        <p>Aruba Mobility Controllers, Masters, and Access Points. Full OSI layer troubleshooting with root cause analysis.</p>
+        <h3 data-i18n="skills.s2.title">Wireless Network Design</h3>
+        <p data-i18n="skills.s2.desc">Aruba Mobility Controllers, Masters, and Access Points. Full OSI layer troubleshooting with root cause analysis.</p>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">&#9671;</div>
-        <h3>Wireless Mobility</h3>
-        <p>RADIUS authentication, firmware management, AirWave/Central tools, and Aruba Instant AP configuration.</p>
+        <h3 data-i18n="skills.s3.title">Wireless Mobility</h3>
+        <p data-i18n="skills.s3.desc">RADIUS authentication, firmware management, AirWave/Central tools, and Aruba Instant AP configuration.</p>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">&#9651;</div>
-        <h3>Cybersecurity</h3>
-        <p>Pentesting, vulnerability assessment, IDS/IPS management, firewall configuration, and incident response.</p>
+        <h3 data-i18n="skills.s4.title">Cybersecurity</h3>
+        <p data-i18n="skills.s4.desc">Pentesting, vulnerability assessment, IDS/IPS management, firewall configuration, and incident response.</p>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">&#9655;</div>
-        <h3>System Administration</h3>
-        <p>Linux system administration, network infrastructure management, Cisco API integration, and automation.</p>
+        <h3 data-i18n="skills.s5.title">System Administration</h3>
+        <p data-i18n="skills.s5.desc">Linux system administration, network infrastructure management, Cisco API integration, and automation.</p>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">&#9661;</div>
-        <h3>Software Development</h3>
-        <p>Python Flask web applications, secure authentication systems, database integration, and API development.</p>
+        <h3 data-i18n="skills.s6.title">Software Development</h3>
+        <p data-i18n="skills.s6.desc">Python Flask web applications, secure authentication systems, database integration, and API development.</p>
       </div>
     </div>
   </div>
@@ -325,38 +337,38 @@
 <!-- Certifications -->
 <section id="certifications" class="section certifications">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Certifications</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="certs.title">Certifications</span></h2>
     <div class="cert-grid">
       <div class="cert-item reveal">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/PaloAltoNetworks_2020_Logo.svg/960px-PaloAltoNetworks_2020_Logo.svg.png" alt="Palo Alto Networks logo" class="cert-logo">
         <h4>CIC NIST/NICE</h4>
-        <p>Palo Alto Networks Cybersecurity Academy · Issued Nov 2021</p>
+        <p><span data-i18n="certs.issuerPalo">Palo Alto Networks Cybersecurity Academy</span> · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.nov">Nov</span> 2021</p>
       </div>
       <div class="cert-item reveal">
         <img src="https://cdn.simpleicons.org/tryhackme" alt="TryHackMe logo" class="cert-logo">
-        <h4>Jr Penetration Tester Learning Path</h4>
-        <p>TryHackMe · Issued Dec 2022</p>
+        <h4 data-i18n="certs.jrpt">Jr Penetration Tester Learning Path</h4>
+        <p>TryHackMe · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.dec">Dec</span> 2022</p>
       </div>
-      <div class="cert-item reveal cert-expired">
+      <div class="cert-item reveal cert-expired" data-badge="EXPIRED">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Comptia-logo.svg" alt="CompTIA logo" class="cert-logo">
         <h4>Network+ ce</h4>
-        <p>CompTIA · Issued Jan 2023 · Expired Jan 2026</p>
-        <a href="https://www.credly.com/badges/25e27787-d13d-4e06-91f5-150098746693/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-link">View on Credly</a>
+        <p>CompTIA · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.jan">Jan</span> 2023 · <span data-i18n="certs.expired">Expired</span> <span data-i18n="month.jan">Jan</span> 2026</p>
+        <a href="https://www.credly.com/badges/25e27787-d13d-4e06-91f5-150098746693/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-link" data-i18n="certs.credly">View on Credly</a>
       </div>
       <div class="cert-item reveal">
         <img src="https://cdn.simpleicons.org/google" alt="Google logo" class="cert-logo">
-        <h4>System Administration and IT Infrastructure Services</h4>
-        <p>Google · Issued Nov 2020</p>
+        <h4 data-i18n="certs.sysadmin">System Administration and IT Infrastructure Services</h4>
+        <p>Google · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.nov">Nov</span> 2020</p>
       </div>
       <div class="cert-item reveal">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/University_System_of_Georgia_logo.svg/250px-University_System_of_Georgia_logo.svg.png" alt="University System of Georgia logo" class="cert-logo">
-        <h4>Cybersecurity and the X-Factor</h4>
-        <p>University System of Georgia · Issued Nov 2020</p>
+        <h4 data-i18n="certs.xfactor">Cybersecurity and the X-Factor</h4>
+        <p><span data-i18n="certs.usg">University System of Georgia</span> · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.nov">Nov</span> 2020</p>
       </div>
       <div class="cert-item reveal">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/University_of_Colorado_system_logo.svg/960px-University_of_Colorado_system_logo.svg.png" alt="University of Colorado System logo" class="cert-logo">
-        <h4>Detecting and Mitigating Cyber Threats & Attacks</h4>
-        <p>University of Colorado System · Issued Nov 2020</p>
+        <h4 data-i18n="certs.threats">Detecting and Mitigating Cyber Threats &amp; Attacks</h4>
+        <p><span data-i18n="certs.ucs">University of Colorado System</span> · <span data-i18n="certs.issued">Issued</span> <span data-i18n="month.nov">Nov</span> 2020</p>
       </div>
     </div>
   </div>
@@ -365,10 +377,10 @@
 <!-- Education -->
 <section id="education" class="section education">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Education</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="edu.title">Education</span></h2>
     <div class="edu-card reveal">
       <h3>Ecole Supérieure Privée d'Ingénierie et de Technologies — ESPRIT</h3>
-      <p class="edu-degree">Engineer's Degree, Network Infrastructure and Data Security</p>
+      <p class="edu-degree" data-i18n="edu.degree">Engineer's Degree, Network Infrastructure and Data Security</p>
       <span class="edu-date">2017 — 2022</span>
     </div>
   </div>
@@ -377,13 +389,13 @@
 <!-- Contact -->
 <section id="contact" class="section contact">
   <div class="container">
-    <h2 class="section-title reveal"><span class="accent-line"></span>Get in Touch</h2>
+    <h2 class="section-title reveal"><span class="accent-line"></span><span data-i18n="contact.title">Get in Touch</span></h2>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <p>I'm always open to new opportunities and interesting conversations. Whether it's about wireless networking, cybersecurity, or just connecting — reach out.</p>
+        <p data-i18n="contact.intro">I'm always open to new opportunities and interesting conversations. Whether it's about wireless networking, cybersecurity, or just connecting — reach out.</p>
         <div class="contact-details">
           <a href="mailto:faresamir7@gmail.com" class="contact-link">
-            <span class="contact-label">Email</span>
+            <span class="contact-label" data-i18n="about.labelEmail">Email</span>
             faresamir7@gmail.com
           </a>
           <a href="https://www.linkedin.com/in/fares-amir-hassen-4913951b7" target="_blank" rel="noopener noreferrer" class="contact-link">
@@ -391,16 +403,16 @@
             linkedin.com/in/fares-amir-hassen
           </a>
           <div class="contact-link">
-            <span class="contact-label">Location</span>
-            4 Rue de l'Himalaya, Riadh El Andalous<br>Ariana, Tunisia
+            <span class="contact-label" data-i18n="about.labelLocation">Location</span>
+            <span data-i18n="contact.address">4 Rue de l'Himalaya, Riadh El Andalous<br>Ariana, Tunisia</span>
           </div>
         </div>
         <div class="contact-downloads">
           <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="download-btn" download>
-            <span class="download-icon">&#8595;</span> Resume <span class="download-meta">PDF · 1 page</span>
+            <span class="download-icon">&#8595;</span> <span data-i18n="contact.dlResume">Resume</span> <span class="download-meta" data-i18n="contact.dlResumeMeta">PDF · 1 page</span>
           </a>
           <a href="assets/Fares-Amir-Hassen-CV.pdf" class="download-btn" download>
-            <span class="download-icon">&#8595;</span> Full CV <span class="download-meta">PDF · detailed</span>
+            <span class="download-icon">&#8595;</span> <span data-i18n="contact.dlCv">Full CV</span> <span class="download-meta" data-i18n="contact.dlCvMeta">PDF · detailed</span>
           </a>
         </div>
       </div>
@@ -411,10 +423,11 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 Fares Amir Hassen. All rights reserved.</p>
+    <p data-i18n="footer.copy">&copy; 2026 Fares Amir Hassen. All rights reserved.</p>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

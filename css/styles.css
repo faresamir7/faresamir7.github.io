@@ -696,7 +696,7 @@ img {
 }
 
 .cert-expired::after {
-  content: 'EXPIRED';
+  content: attr(data-badge);
   position: absolute;
   top: 12px;
   right: 12px;
@@ -1043,5 +1043,152 @@ img {
 
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   Internationalization (i18n)
+   ============================================ */
+
+/* Language switcher in the nav */
+.lang-switcher {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #777;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.3s;
+}
+
+.lang-btn:hover {
+  color: #fff;
+}
+
+.lang-btn.active {
+  color: #ff2d2d;
+  font-weight: 600;
+}
+
+/* Arabic and Japanese buttons need their own font to render glyphs */
+.lang-btn[data-lang="ar"] { font-family: 'Noto Sans Arabic', sans-serif; font-size: 0.82rem; }
+.lang-btn[data-lang="ja"] { font-family: 'Noto Sans JP', sans-serif; }
+
+/* Language-specific body font stacks (keep headings legible per script) */
+body.lang-ar {
+  font-family: 'Noto Sans Arabic', 'IBM Plex Mono', sans-serif;
+}
+body.lang-ar .nav-logo,
+body.lang-ar .hero-name,
+body.lang-ar .section-title,
+body.lang-ar .timeline-header h3,
+body.lang-ar .skill-card h3,
+body.lang-ar .project-card h3,
+body.lang-ar .cert-item h4,
+body.lang-ar .edu-card h3 {
+  font-family: 'Noto Sans Arabic', 'Space Grotesk', sans-serif;
+}
+
+body.lang-ja {
+  font-family: 'Noto Sans JP', 'IBM Plex Mono', sans-serif;
+}
+body.lang-ja .nav-logo,
+body.lang-ja .hero-name,
+body.lang-ja .section-title,
+body.lang-ja .timeline-header h3,
+body.lang-ja .skill-card h3,
+body.lang-ja .project-card h3,
+body.lang-ja .cert-item h4,
+body.lang-ja .edu-card h3 {
+  font-family: 'Noto Sans JP', 'Space Grotesk', sans-serif;
+}
+
+/* --- Right-to-left (Arabic) --- */
+body.rtl {
+  direction: rtl;
+}
+
+/* Section title accent line flips to the right side */
+body.rtl .accent-line {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* About: details border flips to the right edge */
+body.rtl .about-details {
+  border-left: none;
+  border-right: 2px solid rgba(255, 45, 45, 0.2);
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+/* Timeline: vertical line + markers move to the right */
+body.rtl .timeline {
+  padding-left: 0;
+  padding-right: 3rem;
+}
+body.rtl .timeline::before {
+  left: auto;
+  right: 0;
+}
+body.rtl .timeline-marker {
+  left: auto;
+  right: -3rem;
+  transform: translateX(4px);
+}
+body.rtl .timeline-marker::before {
+  left: auto;
+  right: 9px;
+}
+body.rtl .timeline-details {
+  padding-left: 0;
+  padding-right: 1.2rem;
+}
+body.rtl .timeline-details li::before {
+  left: auto;
+  right: -1.2rem;
+}
+
+/* Education accent bar flips */
+body.rtl .edu-card::before {
+  left: auto;
+  right: 0;
+}
+
+/* Contact links: dot indicator + hover slide flip */
+body.rtl .contact-link {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+body.rtl .contact-link::before {
+  left: auto;
+  right: 0;
+}
+body.rtl .contact-link:hover {
+  transform: translateX(-8px);
+}
+
+/* Skill card top accent stays full-width; expired badge moves to the left */
+body.rtl .cert-expired::after {
+  right: auto;
+  left: 12px;
+}
+
+/* Mobile RTL timeline */
+@media (max-width: 600px) {
+  body.rtl .timeline {
+    padding-right: 2rem;
+  }
+  body.rtl .timeline-marker {
+    right: -2rem;
   }
 }
