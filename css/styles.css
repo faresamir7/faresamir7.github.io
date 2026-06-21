@@ -290,6 +290,64 @@ img {
   color: #fff;
 }
 
+/* Hero dual-action buttons */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-alt {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ccc;
+}
+
+.hero-cta-alt:hover {
+  background: #e8e8e8;
+  color: #0a0a0a;
+  border-color: #e8e8e8;
+}
+
+/* Contact download buttons */
+.contact-downloads {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid rgba(255, 45, 45, 0.4);
+  color: #e8e8e8;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.download-btn:hover {
+  background: rgba(255, 45, 45, 0.1);
+  border-color: #ff2d2d;
+  transform: translateY(-2px);
+}
+
+.download-icon {
+  color: #ff2d2d;
+  font-weight: 700;
+}
+
+.download-meta {
+  color: #666;
+  font-size: 0.68rem;
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
 /* Scroll indicator */
 .hero-scroll-indicator {
   position: absolute;

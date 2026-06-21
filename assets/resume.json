@@ -1,0 +1,233 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Fares Amir Hassen",
+    "label": "Technical Account Manager",
+    "email": "faresamir7@gmail.com",
+    "phone": "+216 54 522 599",
+    "url": "https://faresamir7.github.io",
+    "summary": "Technical Account Manager at Hewlett Packard Enterprise with a strong computer-science foundation and years of hands-on experience in wireless network engineering, cybersecurity, and enterprise infrastructure. Trusted technical advisor bridging enterprise customers and HPE engineering — turning complex wireless, storage, and security challenges into clear, proactive outcomes.",
+    "location": {
+      "city": "Ariana",
+      "countryCode": "TN",
+      "region": "Tunisia"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/fares-amir-hassen-4913951b7",
+        "username": "fares-amir-hassen"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/faresamir7",
+        "username": "faresamir7"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Hewlett Packard Enterprise",
+      "position": "Technical Account Manager",
+      "location": "Ariana, Tunisia",
+      "startDate": "Jan 2026",
+      "endDate": "Present",
+      "highlights": [
+        "Serve as the trusted technical advisor and primary HPE interface across the account, owning the technical relationship from escalation to resolution.",
+        "Manage the delivery of contracted proactive support services, planning service improvements and staying accountable for defined service deliverables.",
+        "Provide multi-technology support across HPE ProLiant servers, Synergy composable infrastructure, and 3PAR storage platforms.",
+        "Troubleshoot and maintain SAN fabrics built on HPE and Brocade SAN switches, ensuring resilient storage connectivity.",
+        "Support enterprise campus networking on HPE and Aruba switches, applying deep wireless and infrastructure expertise.",
+        "Act as the bridge between customer teams and HPE engineering, translating complex technical issues into clear, proactive outcomes."
+      ]
+    },
+    {
+      "name": "HPE Aruba Networking",
+      "position": "Wireless Network Engineer",
+      "location": "Ariana, Tunisia",
+      "startDate": "Mar 2023",
+      "endDate": "Dec 2025",
+      "highlights": [
+        "Diagnosed wireless network issues involving Aruba Mobility Controllers, Masters, and Access Points across all OSI layers.",
+        "Implemented and configured modern RADIUS authentication protocols for secure wireless access.",
+        "Performed firmware upgrades on Aruba devices to ensure optimal performance and security.",
+        "Provided remote technical support for Aruba AOS products, analyzing device logs to pinpoint and resolve disruptions.",
+        "Assisted with AirWave and Central troubleshooting tools; configured Aruba Instant APs in enterprise environments.",
+        "Documented network issues with detailed defect classification and tracked resolutions.",
+        "Collaborated with cross-functional teams and kept customers updated throughout the resolution process."
+      ]
+    },
+    {
+      "name": "3S Standard Sharing Software",
+      "position": "Network Security Intern",
+      "location": "Tunis, Tunisia",
+      "startDate": "Mar 2022",
+      "endDate": "Sep 2022",
+      "highlights": [
+        "Built a modular Python Flask web platform for centralized management and control of enterprise network nodes.",
+        "Automated Cisco API integration with optimized, scalable calls for mass configuration of network infrastructure.",
+        "Designed a secure authentication system with user role controls.",
+        "Integrated a configuration database and conducted rigorous stability testing."
+      ]
+    },
+    {
+      "name": "OXAHOST",
+      "position": "Network Technician Intern",
+      "location": "Tunis, Tunisia",
+      "startDate": "Jun 2021",
+      "endDate": "Jul 2021",
+      "highlights": [
+        "Created Tunisia's only CentOS mirror to support local infrastructure.",
+        "Performed penetration testing on the company's new website and hosted services, including Zimbra and cPanel.",
+        "Collaborated with web developers to harden website security ahead of launch.",
+        "Audited and addressed a range of system and network security concerns."
+      ]
+    },
+    {
+      "name": "BIAT",
+      "position": "Summer IT Intern",
+      "location": "Tunisia",
+      "startDate": "Aug 2020",
+      "endDate": "Sep 2020",
+      "highlights": [
+        "Assisted in designing, maintaining, and troubleshooting network infrastructure and devices (routers, switches, firewalls).",
+        "Supported vulnerability assessments and penetration testing activities.",
+        "Configured and managed network security tools (IDS/IPS, firewalls); analyzed logs for incident response.",
+        "Configured secure remote access solutions (VPN, SSL) and collaborated on security best practices."
+      ]
+    },
+    {
+      "name": "BIAT",
+      "position": "Summer Intern",
+      "location": "Tunisia",
+      "startDate": "Aug 2019",
+      "endDate": "Sep 2019",
+      "highlights": [
+        "Served as liaison between Backoffice and Frontoffice teams to streamline communication.",
+        "Coordinated tasks and managed client requests, ensuring smooth information flow.",
+        "Improved cross-team collaboration and overall workflow efficiency."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "ESPRIT — École Supérieure Privée d'Ingénierie et de Technologies",
+      "area": "Network Infrastructure and Data Security",
+      "studyType": "Engineer's Degree (Master's level)",
+      "startDate": "2017",
+      "endDate": "2022"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "CompTIA Network+ ce",
+      "issuer": "CompTIA",
+      "date": "Jan 2023",
+      "note": "Expired Jan 2026"
+    },
+    {
+      "name": "CIC NIST/NICE Framework",
+      "issuer": "Palo Alto Networks Cybersecurity Academy",
+      "date": "Nov 2021"
+    },
+    {
+      "name": "Jr Penetration Tester Learning Path",
+      "issuer": "TryHackMe",
+      "date": "Dec 2022"
+    },
+    {
+      "name": "System Administration and IT Infrastructure Services",
+      "issuer": "Google",
+      "date": "Nov 2020"
+    },
+    {
+      "name": "Cybersecurity and the X-Factor",
+      "issuer": "University System of Georgia",
+      "date": "Nov 2020"
+    },
+    {
+      "name": "Detecting and Mitigating Cyber Threats & Attacks",
+      "issuer": "University of Colorado System",
+      "date": "Nov 2020"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Technologies",
+      "keywords": [
+        "HPE ProLiant",
+        "HPE Synergy",
+        "HPE 3PAR",
+        "HPE & Brocade SAN switches",
+        "HPE & Aruba switches",
+        "Aruba AOS 8",
+        "Aruba Instant APs",
+        "Cisco",
+        "RADIUS",
+        "Python",
+        "Shell scripting",
+        "Wireshark"
+      ]
+    },
+    {
+      "name": "Domains",
+      "keywords": [
+        "Wireless network design",
+        "RF technology & coverage planning",
+        "Network troubleshooting (all OSI layers)",
+        "SAN / storage infrastructure",
+        "Server deployment",
+        "Cybersecurity & penetration testing",
+        "Packet analysis",
+        "Automation",
+        "Authentication"
+      ]
+    },
+    {
+      "name": "Professional",
+      "keywords": [
+        "Technical account management",
+        "Client relationship management",
+        "Cross-functional collaboration",
+        "Technical documentation"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Arabic",
+      "fluency": "Native"
+    },
+    {
+      "language": "French",
+      "fluency": "Fluent (C1–C2)"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Cooking"
+    },
+    {
+      "name": "Gaming"
+    },
+    {
+      "name": "Gardening"
+    },
+    {
+      "name": "Plastic models"
+    },
+    {
+      "name": "Travelling"
+    },
+    {
+      "name": "Collecting"
+    },
+    {
+      "name": "3D modelling"
+    }
+  ]
+}

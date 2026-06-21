@@ -1,0 +1,72 @@
+Fares Amir Hassen
+Technical Account Manager
+faresamir7@gmail.com | +216 54 522 599 | Ariana, Tunisia | linkedin.com/in/fares-amir-hassen | github.com/faresamir7 | faresamir7.github.io
+
+PROFESSIONAL SUMMARY
+Technical Account Manager at Hewlett Packard Enterprise with a strong computer-science foundation and years of hands-on experience in wireless network engineering, cybersecurity, and enterprise infrastructure. Trusted technical advisor bridging enterprise customers and HPE engineering — turning complex wireless, storage, and security challenges into clear, proactive outcomes.
+
+EXPERIENCE
+Technical Account Manager, Hewlett Packard Enterprise (Jan 2026 – Present, Ariana, Tunisia)
+  - Serve as the trusted technical advisor and primary HPE interface across the account, owning the technical relationship from escalation to resolution.
+  - Manage the delivery of contracted proactive support services, planning service improvements and staying accountable for defined service deliverables.
+  - Provide multi-technology support across HPE ProLiant servers, Synergy composable infrastructure, and 3PAR storage platforms.
+  - Troubleshoot and maintain SAN fabrics built on HPE and Brocade SAN switches, ensuring resilient storage connectivity.
+  - Support enterprise campus networking on HPE and Aruba switches, applying deep wireless and infrastructure expertise.
+  - Act as the bridge between customer teams and HPE engineering, translating complex technical issues into clear, proactive outcomes.
+
+Wireless Network Engineer, HPE Aruba Networking (Mar 2023 – Dec 2025, Ariana, Tunisia)
+  - Diagnosed wireless network issues involving Aruba Mobility Controllers, Masters, and Access Points across all OSI layers.
+  - Implemented and configured modern RADIUS authentication protocols for secure wireless access.
+  - Performed firmware upgrades on Aruba devices to ensure optimal performance and security.
+  - Provided remote technical support for Aruba AOS products, analyzing device logs to pinpoint and resolve disruptions.
+  - Assisted with AirWave and Central troubleshooting tools; configured Aruba Instant APs in enterprise environments.
+  - Documented network issues with detailed defect classification and tracked resolutions.
+  - Collaborated with cross-functional teams and kept customers updated throughout the resolution process.
+
+Network Security Intern, 3S Standard Sharing Software (Mar 2022 – Sep 2022, Tunis, Tunisia)
+  - Built a modular Python Flask web platform for centralized management and control of enterprise network nodes.
+  - Automated Cisco API integration with optimized, scalable calls for mass configuration of network infrastructure.
+  - Designed a secure authentication system with user role controls.
+  - Integrated a configuration database and conducted rigorous stability testing.
+
+Network Technician Intern, OXAHOST (Jun 2021 – Jul 2021, Tunis, Tunisia)
+  - Created Tunisia's only CentOS mirror to support local infrastructure.
+  - Performed penetration testing on the company's new website and hosted services, including Zimbra and cPanel.
+  - Collaborated with web developers to harden website security ahead of launch.
+  - Audited and addressed a range of system and network security concerns.
+
+Summer IT Intern, BIAT (Aug 2020 – Sep 2020, Tunisia)
+  - Assisted in designing, maintaining, and troubleshooting network infrastructure and devices (routers, switches, firewalls).
+  - Supported vulnerability assessments and penetration testing activities.
+  - Configured and managed network security tools (IDS/IPS, firewalls); analyzed logs for incident response.
+  - Configured secure remote access solutions (VPN, SSL) and collaborated on security best practices.
+
+Summer Intern, BIAT (Aug 2019 – Sep 2019, Tunisia)
+  - Served as liaison between Backoffice and Frontoffice teams to streamline communication.
+  - Coordinated tasks and managed client requests, ensuring smooth information flow.
+  - Improved cross-team collaboration and overall workflow efficiency.
+
+EDUCATION
+ESPRIT — École Supérieure Privée d'Ingénierie et de Technologies (2017 – 2022, Ariana, Tunisia)
+  Engineer's Degree (Diplôme d'Ingénieur, Master's level), Network Infrastructure and Data Security
+
+CERTIFICATIONS
+  - CompTIA Network+ ce | CompTIA | Jan 2023 (Expired Jan 2026)
+  - CIC NIST/NICE Framework | Palo Alto Networks Cybersecurity Academy | Nov 2021
+  - Jr Penetration Tester Learning Path | TryHackMe | Dec 2022
+  - System Administration and IT Infrastructure Services | Google | Nov 2020
+  - Cybersecurity and the X-Factor | University System of Georgia | Nov 2020
+  - Detecting and Mitigating Cyber Threats & Attacks | University of Colorado System | Nov 2020
+
+SKILLS
+  Technologies: HPE ProLiant, HPE Synergy, HPE 3PAR, HPE & Brocade SAN switches, HPE & Aruba switches, Aruba AOS 8, Aruba Instant APs, Cisco, RADIUS, Python, Shell scripting, Wireshark
+  Domains: Wireless network design, RF technology & coverage planning, Network troubleshooting (all OSI layers), SAN / storage infrastructure, Server deployment, Cybersecurity & penetration testing, Packet analysis, Automation, Authentication
+  Professional: Technical account management, Client relationship management, Cross-functional collaboration, Technical documentation
+
+LANGUAGES
+  - Arabic: Native
+  - French: Fluent (C1–C2)
+  - English: Professional working proficiency
+
+INTERESTS
+  Cooking, Gaming, Gardening, Plastic models, Travelling, Collecting, 3D modelling
