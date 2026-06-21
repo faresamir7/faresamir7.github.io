@@ -21,6 +21,10 @@ body {
   color: #e8e8e8;
   line-height: 1.7;
   overflow-x: hidden;
+}
+
+/* Hide native cursor only once JS has activated the custom cursor */
+body.custom-cursor-active {
   cursor: none;
 }
 

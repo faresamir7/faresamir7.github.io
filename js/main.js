@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ring = document.querySelector('.cursor-ring');
 
   if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
+    document.body.classList.add('custom-cursor-active');
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
 
@@ -48,41 +49,51 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ring) ring.style.display = 'none';
   }
 
-  // --- Scroll Reveal ---
+  // --- Scroll Reveal (IntersectionObserver) ---
   const reveals = document.querySelectorAll('.reveal');
 
-  function checkReveal() {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 120;
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -120px 0px' });
 
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - revealPoint) {
-        el.classList.add('visible');
-      }
-    });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: reveal everything immediately
+    reveals.forEach(el => el.classList.add('visible'));
   }
-
-  // Initial check + scroll listener
-  checkReveal();
-  window.addEventListener('scroll', checkReveal, { passive: true });
 
   // --- Mobile Nav Toggle ---
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   if (toggle && navLinks) {
+    const setMenu = (open) => {
+      toggle.classList.toggle('active', open);
+      navLinks.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
+      setMenu(!navLinks.classList.contains('open'));
     });
 
     // Close menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    // Close menu on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMenu(false);
+        toggle.focus();
+      }
     });
   }
 
