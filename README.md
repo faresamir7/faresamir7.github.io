@@ -19,6 +19,7 @@ This is a modern, zero-dependency personal portfolio site built with pure HTML, 
 | Hero | Name, current role at HPE, and call-to-action |
 | About | Professional summary with contact details |
 | Experience | Full timeline from 2019–present (HPE TAM, Aruba Networking, 3S Standard Sharing Software, OXAHOST, BIAT) |
+| Projects | Network Management Platform (Flask), Cisco Configuration Automation, Tunisia CentOS Mirror — with technology logos |
 | Skills & Expertise | Account Management, Wireless Network Design, Wireless Mobility, Cybersecurity, System Administration, Software Development |
 | Certifications | TryHackMe, CompTIA Network+, Palo Alto Networks, Google, and university cybersecurity certifications |
 | Education | ESPRIT — Engineer's Degree in Network Infrastructure and Data Security (2017–2022) |
@@ -29,8 +30,10 @@ This is a modern, zero-dependency personal portfolio site built with pure HTML, 
 ```
 faresamir7.github.io/
 ├── index.html          # Single-page site with all sections
-├── css/styles.css      # All styles (~15KB) — dark theme, animations, responsive breakpoints
+├── css/styles.css      # All styles — dark theme, animations, responsive breakpoints
 ├── js/main.js          # Custom cursor + scroll reveal + mobile nav toggle
+├── robots.txt          # Crawler directives + sitemap reference
+├── sitemap.xml         # Sitemap for search engines
 └── README.md           # This file
 ```
 

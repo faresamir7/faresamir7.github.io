@@ -538,6 +538,73 @@ img {
 }
 
 /* ============================================
+   Projects Section
+   ============================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  border-color: rgba(255, 45, 45, 0.3);
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.project-card p {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-tech {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tech-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.8);
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.project-card:hover .tech-logo {
+  filter: none;
+  opacity: 1;
+}
+
+.project-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* ============================================
    Certifications Section
    ============================================ */
 .cert-grid {
@@ -806,6 +873,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav-links {
     display: none;
     position: fixed;
@@ -864,6 +935,10 @@ img {
 
   .skills-grid,
   .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
