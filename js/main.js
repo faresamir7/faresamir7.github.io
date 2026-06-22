@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Internationalization (i18n) ---
   initI18n();
 
+  // --- Creative enhancements ---
+  initIntro();
+  initTypingRoles();
+  initActiveNav();
+  initScrollProgress();
+  initUptimeCounter();
+
   // --- Custom Cursor ---
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
@@ -131,6 +138,11 @@ function initConstellation() {
   let stars = [];
   let animationId;
 
+  // Cursor interaction state (the "you are here" network node)
+  const mouse = { x: null, y: null, active: false };
+  const MOUSE_LINK_DIST = 220;   // cursor links to stars within this range
+  const MOUSE_REPEL_DIST = 110;  // stars gently pushed out of this range
+
   // Configuration — visible but still subtle
   const STAR_COUNT = 60;
   const CONNECTION_DIST = 180;
@@ -159,6 +171,18 @@ function initConstellation() {
     update() {
       this.x += this.vx;
       this.y += this.vy;
+
+      // Gentle repulsion from the cursor — nodes "make way" for you
+      if (mouse.active) {
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < MOUSE_REPEL_DIST && d > 0) {
+          const force = (MOUSE_REPEL_DIST - d) / MOUSE_REPEL_DIST;
+          this.x += (dx / d) * force * 1.4;
+          this.y += (dy / d) * force * 1.4;
+        }
+      }
 
       // Wrap around edges
       if (this.x < -10) this.x = width + 10;
@@ -217,6 +241,29 @@ function initConstellation() {
     }
   }
 
+  function drawMouseConnections() {
+    if (!mouse.active) return;
+    for (let i = 0; i < stars.length; i++) {
+      const dx = stars[i].x - mouse.x;
+      const dy = stars[i].y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_LINK_DIST) {
+        const opacity = 0.45 * (1 - dist / MOUSE_LINK_DIST);
+        ctx.beginPath();
+        ctx.moveTo(stars[i].x, stars[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(255, 45, 45, ${opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+    // The cursor node itself
+    ctx.beginPath();
+    ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 45, 45, 0.9)';
+    ctx.fill();
+  }
+
   function animate() {
     ctx.clearRect(0, 0, width, height);
 
@@ -229,6 +276,9 @@ function initConstellation() {
     // Draw connections between nearby stars
     drawConnections();
 
+    // Draw live links from the cursor to nearby nodes
+    drawMouseConnections();
+
     animationId = requestAnimationFrame(animate);
   }
 
@@ -238,6 +288,16 @@ function initConstellation() {
   window.addEventListener('resize', () => {
     resize();
   });
+
+  // Cursor tracking (only on fine pointers — skip touch)
+  if (window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    }, { passive: true });
+    window.addEventListener('mouseout', () => { mouse.active = false; });
+  }
 }
 
 // ============================================
@@ -293,6 +353,17 @@ function initI18n() {
       el.setAttribute('data-badge', badge);
     });
 
+    // Swap downloadable document links per language (JA = 履歴書 / 職務経歴書)
+    var links = (window.PDF_LINKS && window.PDF_LINKS[lang]) || (window.PDF_LINKS && window.PDF_LINKS.en);
+    if (links) {
+      var hero = document.getElementById('hero-resume-dl');
+      var dlR = document.getElementById('dl-resume');
+      var dlC = document.getElementById('dl-cv');
+      if (hero) hero.setAttribute('href', links.resume);
+      if (dlR) dlR.setAttribute('href', links.resume);
+      if (dlC) dlC.setAttribute('href', links.cv);
+    }
+
     // Document direction + lang
     var isRtl = RTL.indexOf(lang) !== -1;
     document.documentElement.setAttribute('lang', lang);
@@ -309,6 +380,9 @@ function initI18n() {
     });
 
     if (persist) localStorage.setItem(STORAGE_KEY, lang);
+
+    // Notify creative widgets (typing effect, etc.) of the language change
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
   }
 
   // Wire up the switcher
@@ -319,5 +393,149 @@ function initI18n() {
   });
 
   apply(pickLanguage(), false);
+}
+
+// ============================================
+// Creative #4 — Packet-trace intro (network handshake)
+// ============================================
+function initIntro() {
+  var overlay = document.getElementById('intro-overlay');
+  if (!overlay) return;
+
+  function dismiss() {
+    overlay.classList.add('done');
+    setTimeout(function () { if (overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 700);
+  }
+
+  // Show only once per browser session, and skip for reduced-motion users.
+  var seen = sessionStorage.getItem('intro-seen');
+  if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    dismiss();
+    return;
+  }
+  sessionStorage.setItem('intro-seen', '1');
+
+  var nodes = overlay.querySelectorAll('.intro-node');
+  var i = 0;
+  var step = setInterval(function () {
+    if (i < nodes.length) {
+      nodes[i].classList.add('lit');
+      i++;
+    } else {
+      clearInterval(step);
+      setTimeout(dismiss, 450);
+    }
+  }, 260);
+
+  // Safety: never let the overlay trap the user
+  setTimeout(dismiss, 4000);
+  // Allow click/tap to skip
+  overlay.addEventListener('click', dismiss);
+}
+
+// ============================================
+// Creative #5 — Typing effect cycling hero roles (language-aware)
+// ============================================
+function initTypingRoles() {
+  var el = document.querySelector('.typed-text');
+  if (!el) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Respect reduced motion: show the first role statically
+    var staticRoles = (window.HERO_ROLES && window.HERO_ROLES.en) || [];
+    el.textContent = staticRoles[0] || '';
+    return;
+  }
+
+  var lang = 'en';
+  var roles = (window.HERO_ROLES && window.HERO_ROLES[lang]) || [];
+  var idx = 0, char = 0, deleting = false, timer = null;
+
+  function tick() {
+    var word = roles[idx % roles.length] || '';
+    char += deleting ? -1 : 1;
+    el.textContent = word.substring(0, char);
+
+    var delay = deleting ? 35 : 75;
+    if (!deleting && char === word.length) {
+      delay = 1600;            // pause at full word
+      deleting = true;
+    } else if (deleting && char === 0) {
+      deleting = false;
+      idx++;
+      delay = 350;
+    }
+    timer = setTimeout(tick, delay);
+  }
+
+  function restart(newLang) {
+    lang = newLang;
+    roles = (window.HERO_ROLES && window.HERO_ROLES[lang]) || roles;
+    clearTimeout(timer);
+    idx = 0; char = 0; deleting = false;
+    el.textContent = '';
+    tick();
+  }
+
+  document.addEventListener('langchange', function (e) {
+    restart(e.detail.lang);
+  });
+
+  tick();
+}
+
+// ============================================
+// Creative #3a — Active-section nav highlighting
+// ============================================
+function initActiveNav() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (!sections.length || !navLinks.length || !('IntersectionObserver' in window)) return;
+
+  var byId = {};
+  navLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function (a) { a.classList.remove('active-section'); });
+        var link = byId[entry.target.id];
+        if (link) link.classList.add('active-section');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+
+  sections.forEach(function (s) { observer.observe(s); });
+}
+
+// ============================================
+// Creative #3b — Scroll progress bar
+// ============================================
+function initScrollProgress() {
+  var bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+
+  function update() {
+    var h = document.documentElement;
+    var scrolled = h.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (scrolled / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+}
+
+// ============================================
+// Creative #8 — Live uptime counter (years in networking since 2019)
+// ============================================
+function initUptimeCounter() {
+  var el = document.getElementById('uptime-value');
+  if (!el) return;
+  var start = new Date('2019-08-01T00:00:00Z'); // first BIAT internship
+  var now = new Date();
+  var years = (now - start) / (1000 * 60 * 60 * 24 * 365.25);
+  el.textContent = years.toFixed(1);
 }
 

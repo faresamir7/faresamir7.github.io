@@ -11,17 +11,20 @@ companions for AI agents and ATS systems.
 
 ## Outputs (written to `../assets/`)
 
+Localized Resume + CV in English, French, Arabic (RTL), plus the two
+traditional Japanese-market documents.
+
 | File | Purpose |
 |------|---------|
-| `Fares-Amir-Hassen-Resume.pdf` | 1-page concise resume (European norm) |
-| `Fares-Amir-Hassen-CV.pdf` | 2-page comprehensive CV (European norm) |
-| `Fares-Amir-Hassen-Resume.txt` | Plain-text resume (AI/ATS friendly) |
-| `Fares-Amir-Hassen-CV.txt` | Plain-text CV |
+| `Fares-Amir-Hassen-Resume.pdf` / `-FR` / `-AR` | 1-page concise resume (EN/FR/AR) |
+| `Fares-Amir-Hassen-CV.pdf` / `-FR` / `-AR` | 2-page comprehensive CV (EN/FR/AR) |
+| `Fares-Amir-Hassen-Rirekisho-JA.pdf` | 履歴書 — traditional Japanese resume form |
+| `Fares-Amir-Hassen-Shokumu-Keirekisho-JA.pdf` | 職務経歴書 — Japanese career-history document |
+| `*-Resume*.txt` / `*-CV*.txt` | Plain-text (AI/ATS friendly) |
 | `resume.json` | [JSON Resume schema](https://jsonresume.org) — structured data for AI agents |
 
-All PDFs have selectable text (not images) and embedded metadata (title, author, keywords)
-for parsing. The website links `resume.json` via `<link rel="alternate" type="application/json">`
-and embeds JSON-LD `Person` schema in `index.html`.
+Content lives in `data.py` (English source of truth) and `translations.py`
+(FR/AR). Japanese is authored directly in `build_ja.py` because the format differs.
 
 ## Rebuild
 
@@ -29,7 +32,8 @@ Requires a headless Chromium/Chrome and `pypdf`.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pypdf
-.venv/bin/python build.py
+.venv/bin/python build.py       # EN/FR/AR resume+CV + resume.json
+.venv/bin/python build_ja.py    # 履歴書 + 職務経歴書
 ```
 
 Timeline data follows the LinkedIn-generated resume. Street address and photo are

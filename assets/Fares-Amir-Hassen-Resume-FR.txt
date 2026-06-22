@@ -1,0 +1,73 @@
+Fares Amir Hassen
+Technical Account Manager
+faresamir7@gmail.com | +216 54 522 599 | Ariana, Tunisia | linkedin.com/in/fares-amir-hassen | github.com/faresamir7 | faresamir7.github.io
+
+PROFIL PROFESSIONNEL
+Technical Account Manager chez Hewlett Packard Enterprise, doté d'une solide formation en informatique et de plusieurs années d'expérience en ingénierie des réseaux sans fil, en cybersécurité et en infrastructure d'entreprise. Conseiller technique de confiance faisant le lien entre les clients et l'ingénierie HPE — en transformant des défis complexes de réseaux, de stockage et de sécurité en résultats clairs et proactifs.
+
+EXPÉRIENCE PROFESSIONNELLE
+Technical Account Manager, Hewlett Packard Enterprise (Janv. 2026 – Présent, Ariana, Tunisie)
+  - Conseiller technique de confiance et interlocuteur HPE principal du compte, responsable de la relation technique de l'escalade à la résolution.
+  - Piloter la fourniture des services de support proactif contractuels, planifier les améliorations de service et garantir les livrables définis.
+  - Assurer un support multi-technologies sur les serveurs HPE ProLiant, l'infrastructure composable Synergy et les plateformes de stockage 3PAR.
+  - Diagnostiquer et maintenir les fabriques SAN basées sur les commutateurs HPE et Brocade, garantissant une connectivité de stockage résiliente.
+  - Prendre en charge le réseau de campus d'entreprise sur les commutateurs HPE et Aruba, en mobilisant une expertise approfondie du sans-fil et de l'infrastructure.
+  - Faire le lien entre les équipes clientes et l'ingénierie HPE, en traduisant des problèmes techniques complexes en résultats clairs et proactifs.
+
+Ingénieur réseaux sans fil, HPE Aruba Networking (Mars 2023 – Déc. 2025, Ariana, Tunisie)
+  - Diagnostic des problèmes de réseau sans fil impliquant les contrôleurs de mobilité, masters et points d'accès Aruba, sur toutes les couches OSI.
+  - Mise en œuvre et configuration de protocoles d'authentification RADIUS modernes pour un accès sans fil sécurisé.
+  - Mises à niveau des firmwares des équipements Aruba pour des performances et une sécurité optimales.
+  - Support technique à distance des produits Aruba AOS, résolution des problèmes de connectivité par analyse des journaux.
+  - Utilisation des outils AirWave et Central ; configuration de points d'accès Aruba Instant en environnement d'entreprise.
+  - Documentation des incidents avec classification détaillée et suivi des résolutions.
+  - Collaboration avec des équipes pluridisciplinaires et information continue des clients tout au long de la résolution.
+
+Stagiaire en sécurité réseau, 3S Standard Sharing Software (Mars 2022 – Sept. 2022, Tunis, Tunisie)
+  - Développement d'une plateforme web modulaire en Python Flask pour la gestion et le contrôle centralisés des nœuds réseau d'entreprise.
+  - Automatisation de l'intégration de l'API Cisco avec des appels optimisés et évolutifs pour la configuration de masse de l'infrastructure réseau.
+  - Conception d'un système d'authentification sécurisé avec gestion des rôles utilisateurs.
+  - Intégration d'une base de données de configuration et réalisation de tests de stabilité rigoureux.
+
+Stagiaire technicien réseau, OXAHOST (Juin 2021 – Juill. 2021, Tunis, Tunisie)
+  - Création du seul miroir CentOS disponible en Tunisie pour soutenir l'infrastructure locale.
+  - Tests d'intrusion sur le nouveau site web de l'entreprise et les services hébergés, dont Zimbra et cPanel.
+  - Collaboration avec les développeurs web pour renforcer la sécurité du site avant son lancement.
+  - Audit et traitement de divers problèmes de sécurité système et réseau.
+
+Stagiaire d'été (informatique), BIAT (Août 2020 – Sept. 2020, Tunisie)
+  - Participation à la conception, la maintenance et le dépannage de l'infrastructure et des équipements réseau (routeurs, commutateurs, pare-feux).
+  - Soutien aux évaluations de vulnérabilités et aux activités de tests d'intrusion.
+  - Configuration et gestion d'outils de sécurité réseau (IDS/IPS, pare-feux) ; analyse des journaux pour la réponse aux incidents.
+  - Configuration d'accès distants sécurisés (VPN, SSL) et collaboration sur les bonnes pratiques de sécurité.
+
+Stagiaire d'été, BIAT (Août 2019 – Sept. 2019, Tunisie)
+  - Rôle de liaison entre les équipes back-office et front-office pour fluidifier la communication.
+  - Coordination des tâches et gestion des demandes clients, garantissant une circulation fluide de l'information.
+  - Amélioration de la collaboration inter-équipes et de l'efficacité des flux de travail.
+
+FORMATION
+ESPRIT — École Supérieure Privée d'Ingénierie et de Technologies (2017 – 2022, Ariana, Tunisie)
+  Diplôme d'ingénieur (niveau master), Infrastructure réseau et sécurité des données
+
+CERTIFICATIONS
+  - CompTIA Network+ ce | CompTIA | Janv. 2023 (Expiré janv. 2026)
+  - CIC NIST/NICE | Palo Alto Networks Cybersecurity Academy | Nov. 2021
+  - Parcours Jr Penetration Tester | TryHackMe | Déc. 2022
+  - Administration système et services d'infrastructure informatique | Google | Nov. 2020
+  - La cybersécurité et le facteur X | University System of Georgia | Nov. 2020
+  - Détecter et atténuer les cybermenaces et attaques | University of Colorado System | Nov. 2020
+
+COMPÉTENCES & EXPERTISE
+  Technologies: HPE ProLiant, HPE Synergy, HPE 3PAR, Commutateurs SAN HPE et Brocade, Commutateurs HPE et Aruba, Aruba AOS 8, Points d'accès Aruba Instant, Cisco, RADIUS, Python, Scripts shell, Wireshark
+  Domaines: Conception de réseaux sans fil, Technologie RF et planification de couverture, Dépannage réseau (toutes couches OSI), Infrastructure SAN / stockage, Déploiement de serveurs, Cybersécurité et tests d'intrusion, Analyse de paquets, Automatisation, Authentification
+  Professionnel: Gestion de comptes techniques, Gestion de la relation client, Collaboration interfonctionnelle, Documentation technique
+
+LANGUES
+  - Arabe: Langue maternelle
+  - Anglais: Bilingue
+  - Français: Maîtrise professionnelle
+  - Japonais: Débutant, conversation
+
+CENTRES D'INTÉRÊT
+  Cuisine, Jeux vidéo, Jardinage, Maquettes, Voyages, Collection, Modélisation 3D

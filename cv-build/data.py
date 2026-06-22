@@ -26,6 +26,7 @@ SUMMARY = (
 # Each role: title, company, dates, location, bullets (full set for CV; resume trims).
 EXPERIENCE = [
     {
+        "id": "tam",
         "title": "Technical Account Manager",
         "company": "Hewlett Packard Enterprise",
         "dates": "Jan 2026 \u2013 Present",
@@ -40,6 +41,7 @@ EXPERIENCE = [
         ],
     },
     {
+        "id": "wne",
         "title": "Wireless Network Engineer",
         "company": "HPE Aruba Networking",
         "dates": "Mar 2023 \u2013 Dec 2025",
@@ -55,6 +57,7 @@ EXPERIENCE = [
         ],
     },
     {
+        "id": "nsi",
         "title": "Network Security Intern",
         "company": "3S Standard Sharing Software",
         "dates": "Mar 2022 \u2013 Sep 2022",
@@ -67,6 +70,7 @@ EXPERIENCE = [
         ],
     },
     {
+        "id": "oxa",
         "title": "Network Technician Intern",
         "company": "OXAHOST",
         "dates": "Jun 2021 \u2013 Jul 2021",
@@ -79,6 +83,7 @@ EXPERIENCE = [
         ],
     },
     {
+        "id": "biat20",
         "title": "Summer IT Intern",
         "company": "BIAT",
         "dates": "Aug 2020 \u2013 Sep 2020",
@@ -91,6 +96,7 @@ EXPERIENCE = [
         ],
     },
     {
+        "id": "biat19",
         "title": "Summer Intern",
         "company": "BIAT",
         "dates": "Aug 2019 \u2013 Sep 2019",

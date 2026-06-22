@@ -1047,9 +1047,133 @@ img {
 }
 
 /* ============================================
-   Internationalization (i18n)
+   Creative Enhancements
    ============================================ */
 
+/* Packet-trace intro overlay */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.intro-overlay.done {
+  opacity: 0;
+  visibility: hidden;
+}
+.intro-inner {
+  text-align: center;
+}
+.intro-nodes {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+}
+.intro-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  position: relative;
+  flex: 0 0 auto;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+/* connector line between nodes */
+.intro-node + .intro-node {
+  margin-left: 70px;
+}
+.intro-node + .intro-node::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 70px;
+  height: 1px;
+  background: #2a2a2a;
+  transform: translateY(-50%);
+}
+/* lit state, toggled by JS */
+.intro-node.lit {
+  background: #ff2d2d;
+  box-shadow: 0 0 12px rgba(255, 45, 45, 0.8);
+}
+.intro-node.lit::before {
+  background: linear-gradient(to left, #ff2d2d, #2a2a2a);
+}
+.intro-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: #666;
+  text-transform: uppercase;
+}
+.intro-dots::after {
+  content: '';
+  animation: introDots 1.2s steps(4, end) infinite;
+}
+@keyframes introDots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+}
+
+/* Scroll progress bar (top of viewport) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, #ff2d2d, #ff6b3d);
+  z-index: 1002;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+body.rtl .scroll-progress { left: auto; right: 0; }
+
+/* Hero typing effect */
+.hero-typed {
+  font-size: 0.95rem;
+  color: #ff2d2d;
+  letter-spacing: 0.08em;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
+  min-height: 1.4em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.typed-caret {
+  display: inline-block;
+  color: #ff2d2d;
+  animation: caretBlink 1s step-end infinite;
+  font-weight: 700;
+}
+
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+body.lang-ar .hero-typed { font-family: 'Noto Sans Arabic', monospace; }
+body.lang-ja .hero-typed { font-family: 'Noto Sans JP', monospace; }
+
+/* Active-section nav highlight */
+.nav-links a.active-section {
+  color: #fff;
+}
+.nav-links a.active-section::after {
+  width: 100%;
+}
+
+/* ============================================
+   Internationalization (i18n)
+   ============================================ */
 /* Language switcher in the nav */
 .lang-switcher {
   display: flex;

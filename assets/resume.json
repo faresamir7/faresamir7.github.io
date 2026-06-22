@@ -233,5 +233,13 @@
     {
       "name": "3D modelling"
     }
-  ]
+  ],
+  "meta": {
+    "availableLanguages": [
+      "en",
+      "fr",
+      "ar",
+      "ja"
+    ]
+  }
 }

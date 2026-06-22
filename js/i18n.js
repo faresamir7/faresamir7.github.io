@@ -4,6 +4,23 @@
 // Keys map to data-i18n attributes in index.html.
 // ============================================
 
+// Per-language downloadable document paths. JA uses the two traditional
+// Japanese-market documents (履歴書 + 職務経歴書) instead of Resume/CV.
+window.PDF_LINKS = {
+  en: { resume: "assets/Fares-Amir-Hassen-Resume.pdf",    cv: "assets/Fares-Amir-Hassen-CV.pdf" },
+  fr: { resume: "assets/Fares-Amir-Hassen-Resume-FR.pdf", cv: "assets/Fares-Amir-Hassen-CV-FR.pdf" },
+  ar: { resume: "assets/Fares-Amir-Hassen-Resume-AR.pdf", cv: "assets/Fares-Amir-Hassen-CV-AR.pdf" },
+  ja: { resume: "assets/Fares-Amir-Hassen-Rirekisho-JA.pdf", cv: "assets/Fares-Amir-Hassen-Shokumu-Keirekisho-JA.pdf" }
+};
+
+// Hero typing-effect roles, per language (cycled under the subtitle).
+window.HERO_ROLES = {
+  en: ["Trusted Technical Advisor", "Wireless Network Engineer", "Cybersecurity Specialist", "Aruba Networking Expert", "Infrastructure Problem-Solver"],
+  fr: ["Conseiller technique de confiance", "Ingénieur réseaux sans fil", "Spécialiste en cybersécurité", "Expert Aruba Networking", "Résolveur de problèmes d'infrastructure"],
+  ar: ["مستشار تقني موثوق", "مهندس شبكات لاسلكية", "أخصائي أمن سيبراني", "خبير في شبكات Aruba", "حلّال مشكلات البنية التحتية"],
+  ja: ["信頼されるテクニカルアドバイザー", "ワイヤレスネットワークエンジニア", "サイバーセキュリティスペシャリスト", "Aruba ネットワークエキスパート", "インフラ課題の解決者"]
+};
+
 window.I18N = {
   fr: {
     "nav.about": "À propos",
@@ -27,6 +44,8 @@ window.I18N = {
     "about.valueLocation": "Ariana, Tunisie",
     "about.labelRole": "Poste actuel",
     "about.valueRole": "Technical Account Manager @ HPE",
+    "about.labelExp": "Expérience",
+    "about.expYears": "ans dans les réseaux",
     "about.labelEmail": "E-mail",
 
     "exp.title": "Expérience",
@@ -145,6 +164,8 @@ window.I18N = {
     "about.valueLocation": "أريانة، تونس",
     "about.labelRole": "المنصب الحالي",
     "about.valueRole": "مدير حسابات تقني @ HPE",
+    "about.labelExp": "الخبرة",
+    "about.expYears": "سنوات في الشبكات",
     "about.labelEmail": "البريد الإلكتروني",
 
     "exp.title": "الخبرة",
@@ -263,6 +284,8 @@ window.I18N = {
     "about.valueLocation": "アリアナ、チュニジア",
     "about.labelRole": "現在の職務",
     "about.valueRole": "テクニカルアカウントマネージャー @ HPE",
+    "about.labelExp": "経験",
+    "about.expYears": "年（ネットワーク分野）",
     "about.labelEmail": "メール",
 
     "exp.title": "経歴",
@@ -350,8 +373,8 @@ window.I18N = {
     "contact.intro": "新しい機会や興味深い対話をいつでも歓迎しています。ワイヤレスネットワーク、サイバーセキュリティ、あるいは単なる交流についてでも、お気軽にご連絡ください。",
     "contact.address": "4 Rue de l'Himalaya, Riadh El Andalous<br>アリアナ、チュニジア",
     "contact.dlResume": "履歴書",
-    "contact.dlResumeMeta": "PDF · 1ページ",
-    "contact.dlCv": "詳細な CV",
+    "contact.dlResumeMeta": "PDF · 伝統様式",
+    "contact.dlCv": "職務経歴書",
     "contact.dlCvMeta": "PDF · 詳細",
 
     "footer.copy": "© 2026 ファレス・アミール・ハッセン. All rights reserved.",

@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <noscript><style>#intro-overlay{display:none!important}</style></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,6 +57,19 @@
   </script>
 </head>
 <body>
+
+<!-- Packet-trace intro (network handshake animation, shown once per session) -->
+<div id="intro-overlay" class="intro-overlay">
+  <div class="intro-inner">
+    <div class="intro-nodes">
+      <span class="intro-node" data-n="1"></span>
+      <span class="intro-node" data-n="2"></span>
+      <span class="intro-node" data-n="3"></span>
+      <span class="intro-node" data-n="4"></span>
+    </div>
+    <div class="intro-status">ESTABLISHING CONNECTION<span class="intro-dots"></span></div>
+  </div>
+</div>
 
 <!-- Custom cursor -->
 <div class="cursor-dot"></div>
@@ -97,9 +111,10 @@
     <div class="hero-line reveal"></div>
     <p class="hero-title reveal" data-i18n="hero.title">Technical Account Manager at HPE</p>
     <p class="hero-subtitle reveal" data-i18n="hero.subtitle">Wireless Network Engineer · Cybersecurity Specialist</p>
+    <p class="hero-typed reveal"><span class="typed-text"></span><span class="typed-caret">_</span></p>
     <div class="hero-actions reveal">
       <a href="#contact" class="hero-cta" data-i18n="hero.ctaContact">Get in Touch</a>
-      <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="hero-cta hero-cta-alt" download data-i18n="hero.ctaResume">Download Resume</a>
+      <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="hero-cta hero-cta-alt" id="hero-resume-dl" download data-i18n="hero.ctaResume">Download Resume</a>
     </div>
   </div>
   <div class="hero-scroll-indicator">
@@ -124,6 +139,10 @@
         <div class="detail-item">
           <span class="detail-label" data-i18n="about.labelRole">Current Role</span>
           <span class="detail-value" data-i18n="about.valueRole">Technical Account Manager @ HPE</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label" data-i18n="about.labelExp">Experience</span>
+          <span class="detail-value"><span id="uptime-value">6</span>+ <span data-i18n="about.expYears">years in networking</span></span>
         </div>
         <div class="detail-item">
           <span class="detail-label" data-i18n="about.labelEmail">Email</span>
@@ -408,11 +427,11 @@
           </div>
         </div>
         <div class="contact-downloads">
-          <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="download-btn" download>
-            <span class="download-icon">&#8595;</span> <span data-i18n="contact.dlResume">Resume</span> <span class="download-meta" data-i18n="contact.dlResumeMeta">PDF · 1 page</span>
+          <a href="assets/Fares-Amir-Hassen-Resume.pdf" class="download-btn" id="dl-resume" download>
+            <span class="download-icon">&#8595;</span> <span class="dl-label" data-i18n="contact.dlResume">Resume</span> <span class="download-meta" data-i18n="contact.dlResumeMeta">PDF · 1 page</span>
           </a>
-          <a href="assets/Fares-Amir-Hassen-CV.pdf" class="download-btn" download>
-            <span class="download-icon">&#8595;</span> <span data-i18n="contact.dlCv">Full CV</span> <span class="download-meta" data-i18n="contact.dlCvMeta">PDF · detailed</span>
+          <a href="assets/Fares-Amir-Hassen-CV.pdf" class="download-btn" id="dl-cv" download>
+            <span class="download-icon">&#8595;</span> <span class="dl-label" data-i18n="contact.dlCv">Full CV</span> <span class="download-meta" data-i18n="contact.dlCvMeta">PDF · detailed</span>
           </a>
         </div>
       </div>
