@@ -128,13 +128,13 @@ def esc(s):
 
 BASE_CSS = """
 @import url('%(FONT)s');
-@page { size: A4; margin: 12mm 12mm; }
+@page { size: A4; margin: 12mm 13mm; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Noto Sans JP', sans-serif; color: #111; font-size: 9.2pt; line-height: 1.5; }
 .doc-title { font-size: 18pt; font-weight: 700; letter-spacing: 0.5em; text-align: center; margin-bottom: 2mm; }
 .doc-date { text-align: right; font-size: 8.5pt; margin-bottom: 3mm; }
-table { border-collapse: collapse; width: 100%%; }
-td, th { border: 0.5pt solid #444; padding: 2mm 2.5mm; vertical-align: top; }
+table { border-collapse: collapse; width: 99.6%%; margin: 0 auto; border: 0.9pt solid #333; }
+td, th { border: 0.7pt solid #555; padding: 2mm 2.5mm; vertical-align: top; }
 .label { background: #f0f0f0; font-weight: 500; white-space: nowrap; width: 22mm; }
 .section-band { background: #e9e9e9; font-weight: 700; text-align: center; }
 .yr { width: 14mm; text-align: center; white-space: nowrap; }
