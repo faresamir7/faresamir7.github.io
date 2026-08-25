@@ -1,0 +1,296 @@
+/* ============================================================
+   gold.css — VibeCurb visual-redesign override layer
+   Loaded LAST, after css/styles.css. Remove this one <link>
+   to revert 100% of the visual upgrade. No JS was modified.
+   ============================================================ */
+
+:root {
+  /* ── Color: warm the monochrome, tame the red ───────────── */
+  --g-bg:        #08070A;   /* was #0a0a0a — cooler-deep, lets tint read */
+  --g-surface:   rgba(255,255,255,0.025);
+  --g-surface-2: rgba(255,255,255,0.045);
+
+  --g-text:      #EDEBE8;   /* was #e8e8e8 — warm near-white */
+  --g-text-2:    #A9A5A0;   /* was #888/#999 — WCAG AA safe */
+  --g-text-3:    #7A7671;   /* was #555/#666 — captions only */
+
+  /* Pure #ff2d2d on black fringes at text sizes. Keep the pure
+     red for rules/borders; use the softened coral for TEXT. */
+  --g-accent:      #FF2D2D;
+  --g-accent-text: #FF6A55;
+  --g-accent-dim:  rgba(255, 45, 45, 0.28);
+
+  --g-border:    rgba(255,255,255,0.07);
+  --g-border-hi: rgba(255, 45, 45, 0.34);
+
+  /* ── Spacing rhythm ─────────────────────────────────────── */
+  --g-space-section: clamp(6rem, 11vw, 10rem);
+
+  /* ── Radius language ────────────────────────────────────── */
+  --g-radius-sm: 4px;
+  --g-radius-md: 10px;
+  --g-radius-full: 9999px;
+
+  /* ── Easing: no CSS keyword easings anywhere ────────────── */
+  --g-ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --g-ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Layer 1 — Atmosphere: depth in the black
+   ============================================================ */
+body {
+  background-color: var(--g-bg);
+  color: var(--g-text);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%,   rgba(255, 45, 45, 0.055) 0%, transparent 62%),
+    radial-gradient(ellipse 70% 50% at 12% 88%,  rgba(120, 60, 200, 0.035) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Vignette so the constellation canvas sits BEHIND the content
+   instead of crowding the type. Pointer-events none = inert. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 55% 45% at 50% 42%,
+              rgba(8, 7, 10, 0.82) 0%,
+              rgba(8, 7, 10, 0.35) 45%,
+              transparent 72%);
+}
+.nav, .hero-content, .section, .footer { position: relative; z-index: 1; }
+
+/* ============================================================
+   Layer 2 — Typography
+   ============================================================ */
+.hero-name {
+  font-size: clamp(2.75rem, 7.5vw, 6rem);
+  letter-spacing: -0.045em;   /* was -0.02em — tighten at display size */
+  line-height: 0.95;          /* was 1.05 */
+  text-wrap: balance;
+  margin-bottom: 1.25rem;
+}
+
+.hero-greeting {
+  color: var(--g-text-3);
+  letter-spacing: 0.34em;
+  margin-bottom: 1.5rem;
+}
+
+/* Role line borrows the display face so mono isn't doing everything */
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--g-text);
+  margin-bottom: 0.85rem;
+}
+
+.hero-subtitle {
+  color: var(--g-text-2);     /* was #666 — lifts to AA */
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;      /* was 3rem */
+}
+
+.hero-typed { color: var(--g-accent-text); }
+.typed-caret { color: var(--g-accent); }
+
+.section-title {
+  font-size: clamp(2.1rem, 4.5vw, 3.25rem);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
+
+/* Body copy shouldn't run wall-to-wall */
+.about-text p, .project-card p, .skill-card p, .contact-intro {
+  max-width: 68ch;
+  color: var(--g-text-2);
+  line-height: 1.75;
+}
+
+.detail-label, .section-label { color: var(--g-text-3); }
+.footer p { color: var(--g-text-3); }
+
+/* ============================================================
+   Layer 3 — Spacing
+   ============================================================ */
+.section { padding: var(--g-space-section) 0; }
+.section-title { margin-bottom: clamp(3rem, 6vw, 5rem); }
+.hero-line { margin: 0 auto 1.75rem; height: 2px; width: 72px; }
+
+/* Hero must never trap its CTAs below the fold on short viewports */
+.hero {
+  min-height: 100svh;
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+@media (max-height: 820px) {
+  .hero-name { font-size: clamp(2.5rem, 6.5vw, 4.25rem); margin-bottom: 1rem; }
+  .hero-greeting { margin-bottom: 0.9rem; }
+  .hero-line { margin-bottom: 1.1rem; }
+  .hero-title { margin-bottom: 0.5rem; }
+  .hero-subtitle { margin-bottom: 1.25rem; }
+}
+
+/* ============================================================
+   Layer 4 — Components
+   ============================================================ */
+
+/* CTAs: one primary (filled), one ghost — equal widths, real physics */
+.hero-actions { gap: 1rem; }
+
+.hero-cta {
+  min-width: 15rem;
+  text-align: center;
+  border-radius: var(--g-radius-full);
+  padding: 1rem 2.5rem;
+  font-weight: 500;
+  background: var(--g-accent);
+  border-color: var(--g-accent);
+  color: #0a0a0a;
+  transition:
+    transform 0.4s var(--g-ease-snap),
+    box-shadow 0.4s var(--g-ease-snap),
+    background-color 0.3s var(--g-ease-out),
+    color 0.3s var(--g-ease-out);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-cta:hover {
+  background: #ff4444;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 45, 45, 0.22);
+}
+
+.hero-cta:active {
+  transform: translateY(0) scale(0.985);
+  transition-duration: 0.1s;
+}
+
+/* Secondary = ghost */
+.hero-cta-alt {
+  background: transparent;
+  color: var(--g-accent-text);
+  border-color: var(--g-border-hi);
+}
+
+.hero-cta-alt:hover {
+  background: rgba(255, 45, 45, 0.08);
+  color: #fff;
+  border-color: var(--g-accent);
+  box-shadow: 0 10px 30px rgba(255, 45, 45, 0.1);
+}
+
+/* Cards: rounded, deeper hover, warmer borders */
+.project-card, .skill-card, .cert-card {
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: var(--g-radius-md);
+  padding: 2.25rem;
+  transition:
+    transform 0.45s var(--g-ease-snap),
+    border-color 0.35s var(--g-ease-snap),
+    box-shadow 0.45s var(--g-ease-snap),
+    background-color 0.35s var(--g-ease-snap);
+}
+
+.project-card:hover, .skill-card:hover, .cert-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--g-border-hi);
+  background: var(--g-surface-2);
+  box-shadow:
+    0 18px 42px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255, 45, 45, 0.06);
+}
+
+.skill-card::before { transition: transform 0.5s var(--g-ease-snap); }
+
+/* Nav: sliding underline from the correct origin + frost */
+.nav {
+  background: rgba(8, 7, 10, 0.72);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: 1px solid var(--g-border);
+}
+
+.nav-links a { color: var(--g-text-2); transition: color 0.3s var(--g-ease-snap); }
+.nav-links a:hover { color: #fff; }
+
+.nav-links a::after {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--g-ease-snap);
+}
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Links & contact rows get real feedback */
+.contact-link { transition: transform 0.35s var(--g-ease-snap), color 0.3s var(--g-ease-snap); }
+.contact-link:hover { transform: translateX(6px); color: #fff; }
+
+.cert-card a, .about-details a { transition: color 0.3s var(--g-ease-snap); }
+.cert-card a:hover, .about-details a:hover { color: var(--g-accent-text); }
+
+/* Language buttons: normalize optical size across scripts */
+.lang-btn {
+  border-radius: var(--g-radius-full);
+  line-height: 1.2;
+  transition: color 0.3s var(--g-ease-snap), background-color 0.3s var(--g-ease-snap);
+}
+.lang-btn[lang="ar"], .lang-btn[lang="ja"] { font-size: 0.78em; }
+
+/* ============================================================
+   Layer 5 — Motion (upgrade existing .reveal easing)
+   ============================================================ */
+.reveal {
+  transform: translateY(26px);
+  filter: blur(5px);
+  transition:
+    opacity 0.85s var(--g-ease-out),
+    transform 0.85s var(--g-ease-out),
+    filter 0.85s var(--g-ease-out);
+}
+
+.reveal.visible { filter: blur(0); }
+
+/* Kill any leftover keyword-eased transitions on interactives */
+a, button, .project-card, .skill-card, .cert-card, .nav-links a {
+  transition-timing-function: var(--g-ease-snap);
+}
+
+/* ============================================================
+   Layer 6 — Safety: overflow + reduced motion + touch targets
+   ============================================================ */
+html, body { max-width: 100%; overflow-x: hidden; }
+#constellation-canvas { max-width: 100vw; }
+
+@media (max-width: 640px) {
+  .hero-cta { min-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .project-card, .skill-card, .cert-card { padding: 1.75rem; }
+}
+
+.nav-links a, .lang-btn, .hero-cta, .contact-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-links a { min-height: 32px; }
+.contact-link { display: block; min-height: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  body::before { display: block; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
