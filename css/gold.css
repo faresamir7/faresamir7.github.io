@@ -61,7 +61,12 @@ body::before {
               rgba(8, 7, 10, 0.35) 45%,
               transparent 72%);
 }
-.nav, .hero-content, .section, .footer { position: relative; z-index: 1; }
+/* Lift content above the vignette. NOTE: .nav is deliberately EXCLUDED —
+   it carries z-index:1000 in styles.css, and overriding that to 1 makes the
+   fixed mobile menu overlay lose the stacking contest against .hero-content,
+   letting the hero text bleed through the opaque overlay. */
+.hero-content, .section, .footer { position: relative; z-index: 1; }
+.nav { position: fixed; z-index: 1000; }
 
 /* ============================================================
    Layer 2 — Typography
@@ -278,13 +283,34 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .project-card, .skill-card, .cert-card { padding: 1.75rem; }
 }
 
-.nav-links a, .lang-btn, .hero-cta, .contact-link {
+/* Touch targets. NOTE: any element made inline-flex here MUST also set
+   justify-content:center — flex containers ignore text-align on children,
+   which left-packs the label inside the pill. */
+.lang-btn, .hero-cta {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
-.nav-links a { min-height: 32px; }
-.contact-link { display: block; min-height: 0; }
+
+/* Nav links keep their natural inline-block box so their baseline stays
+   aligned with the logo and language buttons in the flex nav bar.
+   The <ul> defaults to align-items:stretch, which makes every <li> as tall
+   as the tallest (the 44px lang button) and top-parks the link text —
+   centering the row is what actually aligns them. */
+.nav-links {
+  align-items: center;
+}
+
+.nav-links > li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-block;
+  min-height: 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
