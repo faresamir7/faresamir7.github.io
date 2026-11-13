@@ -284,6 +284,15 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .project-card, .skill-card, .cert-item { padding: 1.75rem; }
 }
 
+/* Squeeze band. FR's nav row needs 906px of labels + lang buttons; the hamburger
+   only takes over at 900px, so between 901 and ~1120px the labels shrank and
+   "À propos" wrapped to a second line (nav grew 93 -> 100px). Trim the gap and
+   the bar padding in that band instead of moving the breakpoint. */
+@media (min-width: 901px) and (max-width: 1120px) {
+  .nav { padding: 1.5rem 1.25rem; }
+  .nav-links { gap: 1.15rem; }
+}
+
 /* Touch targets. NOTE: any element made inline-flex here MUST also set
    justify-content:center — flex containers ignore text-align on children,
    which left-packs the label inside the pill. */
