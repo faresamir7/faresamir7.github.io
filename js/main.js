@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
+    navLinks.querySelectorAll('a, .lang-btn').forEach(link => {
       link.addEventListener('click', () => setMenu(false));
     });
 
@@ -439,15 +439,15 @@ function initIntro() {
 function initTypingRoles() {
   var el = document.querySelector('.typed-text');
   if (!el) return;
+  // initI18n() already set the page language — read it instead of assuming 'en'
+  var lang = document.documentElement.getAttribute('lang') || 'en';
+  var roles = (window.HERO_ROLES && window.HERO_ROLES[lang]) || [];
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // Respect reduced motion: show the first role statically
-    var staticRoles = (window.HERO_ROLES && window.HERO_ROLES.en) || [];
-    el.textContent = staticRoles[0] || '';
+    el.textContent = roles[0] || '';
     return;
   }
-
-  var lang = 'en';
-  var roles = (window.HERO_ROLES && window.HERO_ROLES[lang]) || [];
   var idx = 0, char = 0, deleting = false, timer = null;
 
   function tick() {

@@ -12,7 +12,7 @@
 
   --g-text:      #EDEBE8;   /* was #e8e8e8 — warm near-white */
   --g-text-2:    #A9A5A0;   /* was #888/#999 — WCAG AA safe */
-  --g-text-3:    #7A7671;   /* was #555/#666 — captions only */
+  --g-text-3:    #7C7773;   /* was #555/#666 — captions only, 4.54:1 on --g-bg */
 
   /* Pure #ff2d2d on black fringes at text sizes. Keep the pure
      red for rules/borders; use the softened coral for TEXT. */
@@ -114,13 +114,14 @@ body::before {
 h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
 
 /* Body copy shouldn't run wall-to-wall */
-.about-text p, .project-card p, .skill-card p, .contact-intro {
+.about-text p, .project-card p, .skill-card p, .contact-info p {
   max-width: 68ch;
   color: var(--g-text-2);
   line-height: 1.75;
 }
 
-.detail-label, .section-label { color: var(--g-text-3); }
+.detail-label, .cert-item p, .project-meta, .timeline-date, .edu-date, .download-meta,
+.contact-label, .intro-status, .lang-btn { color: var(--g-text-3); }
 .footer p { color: var(--g-text-3); }
 
 /* ============================================================
@@ -195,7 +196,7 @@ h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
 }
 
 /* Cards: rounded, deeper hover, warmer borders */
-.project-card, .skill-card, .cert-card {
+.project-card, .skill-card, .cert-item {
   background: var(--g-surface);
   border: 1px solid var(--g-border);
   border-radius: var(--g-radius-md);
@@ -207,7 +208,7 @@ h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
     background-color 0.35s var(--g-ease-snap);
 }
 
-.project-card:hover, .skill-card:hover, .cert-card:hover {
+.project-card:hover, .skill-card:hover, .cert-item:hover {
   transform: translateY(-5px);
   border-color: var(--g-border-hi);
   background: var(--g-surface-2);
@@ -241,8 +242,8 @@ h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
 .contact-link { transition: transform 0.35s var(--g-ease-snap), color 0.3s var(--g-ease-snap); }
 .contact-link:hover { transform: translateX(6px); color: #fff; }
 
-.cert-card a, .about-details a { transition: color 0.3s var(--g-ease-snap); }
-.cert-card a:hover, .about-details a:hover { color: var(--g-accent-text); }
+.cert-item a, .about-details a { transition: color 0.3s var(--g-ease-snap); }
+.cert-item a:hover, .about-details a:hover { color: var(--g-accent-text); }
 
 /* Language buttons: normalize optical size across scripts */
 .lang-btn {
@@ -267,7 +268,7 @@ h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
 .reveal.visible { filter: blur(0); }
 
 /* Kill any leftover keyword-eased transitions on interactives */
-a, button, .project-card, .skill-card, .cert-card, .nav-links a {
+a, button, .project-card, .skill-card, .cert-item, .nav-links a {
   transition-timing-function: var(--g-ease-snap);
 }
 
@@ -280,7 +281,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 @media (max-width: 640px) {
   .hero-cta { min-width: 100%; }
   .hero-actions { flex-direction: column; align-items: stretch; }
-  .project-card, .skill-card, .cert-card { padding: 1.75rem; }
+  .project-card, .skill-card, .cert-item { padding: 1.75rem; }
 }
 
 /* Touch targets. NOTE: any element made inline-flex here MUST also set

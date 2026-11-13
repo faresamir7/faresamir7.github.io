@@ -691,8 +691,12 @@ img {
 
 /* Expired certification styling */
 .cert-expired {
-  opacity: 0.65;
   position: relative;
+}
+
+/* Dim only the logo: opacity on the whole card pushed its text below 4.5:1 */
+.cert-expired .cert-logo {
+  opacity: 0.35;
 }
 
 .cert-expired::after {
@@ -719,12 +723,6 @@ img {
 
 .cert-item:hover .cert-logo {
   opacity: 1;
-}
-
-.cert-badge {
-  font-size: 1.8rem;
-  color: #ff2d2d;
-  margin-bottom: 1rem;
 }
 
 .cert-item h4 {
@@ -817,6 +815,8 @@ img {
   padding-left: 1.5rem;
   position: relative;
   transition: transform 0.3s;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
 .contact-link::before {
@@ -843,26 +843,9 @@ img {
   margin-bottom: 0.25rem;
 }
 
+/* The value text (address span) — this was display:none, which hid the address */
 .contact-link > span:not(.contact-label) {
-  display: none;
-}
-
-.contact-link:not([href]) .contact-label + br,
-.contact-link[href] .contact-label + * {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* Fix for contact link text */
-.contact-link[href]:not(:has(.contact-label)) {
-  font-size: 0.9rem;
-  color: #ff2d2d;
-}
-
-.contact-link[href] .contact-label + * {
   display: block;
-  font-size: 0.9rem;
-  color: #ccc;
 }
 
 /* ============================================
@@ -941,7 +924,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background: rgba(10, 10, 10, 1);
     flex-direction: column;
     align-items: center;
