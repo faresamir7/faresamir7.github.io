@@ -290,7 +290,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
    the bar padding in that band instead of moving the breakpoint. */
 @media (min-width: 901px) and (max-width: 1120px) {
   .nav { padding: 1.5rem 1.25rem; }
-  .nav-links { gap: 1.15rem; }
+  .nav-links { gap: 0.8rem; }
 }
 
 /* Touch targets. NOTE: any element made inline-flex here MUST also set
